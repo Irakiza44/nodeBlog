@@ -1,20 +1,22 @@
 <html lang="en">
-    <%- include("./partials/head.ejs") %>
+  <%- include("./partials/head.ejs") %>
 
-    <body>
-        <%- include("./partials/navigation.ejs") %>
+  <body>
+    <%- include("./partials/navigation.ejs") %>
 
-        <div class="details content">
-            <h2><%= blog.title %></h2>
-            <div class="content">
-                <p><%= blog.body %></p>
-            </div>
-            <a class="delete" data-doc="<%= blog._id %>">delete</a>
-        </div>
+    <div class="details content">
+      <h2><%= blog.title %></h2>
+      <div class="content">
+        <p><%= blog.body %></p>
+      </div>
+      <a class="delete" data-doc="<%= blog._id %>">
+        <img src="/trashcan.svg" alt="delete icon">
+      </a>
+    </div>
 
-        <%- include("./partials/footer.ejs") %>
+    <%- include("./partials/footer.ejs") %>
 
-        <script>
+    <script>
     const trashcan = document.querySelector('a.delete');
 
     trashcan.addEventListener('click', (e) => {
@@ -29,5 +31,5 @@
     });
     
   </script>
-    </body>
+  </body>
 </html>
